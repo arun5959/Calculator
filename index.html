@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>Calculator</h1>
+        <img src="favicon.png" alt="" width="48px" height="48px">
+    </header>
+
+    <main>
+        <div class="calculator">
+            <input type="text" class="calculator-display" id="display" autofocus></input>
+            <script>
+                const input = document.querySelector('input[type="text"]');
+
+                input.addEventListener('keydown', function (event) {
+                    if (event.key === "ArrowUp" || event.key === "ArrowDown") {
+                        event.preventDefault();
+                    }
+                });
+
+            </script>
+            <div class="calculator-keys">
+                <button type="button" class="key-clear action">C</button>
+                <button type="button" class="key-operator action" data-key="%">%</button>
+                <button type="button" class="key-operator action" data-key="/">/</button>
+                <button type="button" class="key-operator action" data-key="*">*</button>
+
+                <button type="button" class="key-number" data-key="7">7</button>
+                <button type="button" class="key-number" data-key="8">8</button>
+                <button type="button" class="key-number" data-key="9">9</button>
+                <button type="button" class="key-operator action" data-key="-">-</button>
+
+                <button type="button" class="key-number" data-key="4">4</button>
+                <button type="button" class="key-number" data-key="5">5</button>
+                <button type="button" class="key-number" data-key="6">6</button>
+                <button type="button" class="key-operator action" data-key="+">+</button>
+
+
+                <button type="button" class="key-number" data-key="1">1</button>
+                <button type="button" class="key-number" data-key="2">2</button>
+                <button type="button" class="key-number" data-key="3">3</button>
+                <button type="button" class="key-equal action" id="equal">=</button>
+
+                <button type="button" class="key-number" id="zero" data-key="0">0</button>
+                <button type="button" class="key-number" data-key=".">.</button>
+            </div>
+
+            <script src="calculator.js"></script>
+        </div>
+
+    </main>
+</body>
+
+</html>
